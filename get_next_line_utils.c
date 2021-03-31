@@ -1,17 +1,17 @@
 #include "get_next_line.h"
 #include <stdlib.h>
 
-size_t ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
 		i++;
-	return(i);
+	return (i);
 }
 
-int nlin(char *str)
+int	nlin(char *str)
 {
 	if (str)
 	{
@@ -25,10 +25,9 @@ int nlin(char *str)
 	return (0);
 }
 
-
-int safety_malloc(char **loc, size_t size)
+int	safety_malloc(char **loc, size_t size)
 {
-	char *aux;
+	char	*aux;
 
 	aux = (char *)malloc(sizeof(char) * (size + 1));
 	if (!aux)
@@ -40,9 +39,9 @@ int safety_malloc(char **loc, size_t size)
 	return (1);
 }
 
-int safety_read(char **buffer, int fd)
+int	safety_read(char **buffer, int fd)
 {
-	int read_value;
+	int	read_value;
 
 	if (safety_malloc(buffer, BUFFER_SIZE) == -1)
 		return (-1);

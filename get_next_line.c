@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int aremoreforme(char **mem, int read_value)
+int	aremoreforme(char **mem, int read_value)
 {
 	if (!ft_strlen(*mem))
 	{
@@ -15,26 +15,27 @@ int aremoreforme(char **mem, int read_value)
 	return (1);
 }
 
-int makeline(char **mem, char **line, int read_value)
+int	makeline(char **mem, char **line, int read_value)
 {
-	char *new_line;
-	char *new_mem;
-	size_t i;
-	size_t j;
+	char	*new_line;
+	char	*new_mem;
+	size_t	i;
+	size_t	j;
 
 	if (!mem)
 		return (0);
 	i = ft_strlen(mem[0]);
+	j = 0;
 	while (mem[0][j] && mem[0][j] != '\n')
 		j++;
 	if (safety_malloc(&new_line, j) == -1)
-		return(-1);
+		return (-1);
 	*line = new_line;
 	j = 0;
 	while (mem[0][j] && mem[0][j] != '\n')
 		*(new_line)++ = mem[0][j++];
 	if (safety_malloc(&new_mem, i - j) == -1)
-		return(-1);
+		return (-1);
 	i = 0;
 	while (mem[0][j] && mem[0][++j])
 		new_mem[i++] = mem[0][j];
@@ -43,19 +44,19 @@ int makeline(char **mem, char **line, int read_value)
 	return (aremoreforme(mem, read_value));
 }
 
-int update_line(char **src, char **dst, int fd)
+int	update_line(char **src, char **dst, int fd)
 {
 	char	*updated_line;
 	char	*aux;
 	int		read_value;
 	size_t	i;
-	size_t 	j;
+	size_t	j;
 
 	i = 0;
 	j = 0;
 	read_value = safety_read(&aux, fd);
 	if (read_value == -1)
-		return(-1);
+		return (-1);
 	if (safety_malloc(&updated_line, ft_strlen(*src) + ft_strlen(aux)) == -1)
 		return (-1);
 	while (src[0][i])
@@ -72,14 +73,14 @@ int update_line(char **src, char **dst, int fd)
 
 int	get_next_line(char **line, int fd)
 {
-	static char *mem = 0;
+	static char	*mem = 0;
 	char		*buffer;
 	int			read_value;
 
 	buffer = 0;
 	if (line == 0 || fd < 0 || BUFFER_SIZE < 1)
 		return (-1);
-	if  (mem)
+	if (mem)
 	{
 		if (nlin(mem))
 			return (makeline(&mem, line, BUFFER_SIZE));
