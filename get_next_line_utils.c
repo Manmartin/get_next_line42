@@ -25,7 +25,7 @@ int	nlin(char *str)
 	return (0);
 }
 
-int	safety_malloc(char **loc, size_t size)
+int	safe_malloc(char **loc, size_t size)
 {
 	char	*aux;
 
@@ -39,11 +39,11 @@ int	safety_malloc(char **loc, size_t size)
 	return (1);
 }
 
-int	safety_read(char **buffer, int fd)
+int	safe_read(char **buffer, int fd)
 {
 	int	read_value;
 
-	if (safety_malloc(buffer, BUFFER_SIZE) == -1)
+	if (safe_malloc(buffer, BUFFER_SIZE) == -1)
 		return (-1);
 	read_value = read(fd, *buffer, BUFFER_SIZE);
 	if (read_value < 0)
@@ -53,4 +53,25 @@ int	safety_read(char **buffer, int fd)
 		return (-1);
 	}
 	return (read_value);
+}
+
+int	fsm(char **mem1, char **mem2, int return_value)
+{
+	if (mem1)
+	{
+		if (*mem1)
+		{
+			free(*mem1);
+			*mem1 = 0;
+		}
+	}
+	if (mem2)
+	{
+		if (*mem2)
+		{
+			free(*mem2);
+			*mem2 = 0;
+		}
+	}
+	return (return_value);
 }
