@@ -6,7 +6,7 @@
 /*   By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 21:00:14 by manmarti          #+#    #+#             */
-/*   Updated: 2021/04/02 10:16:19 by manmarti         ###   ########.fr       */
+/*   Updated: 2021/04/02 10:34:22 by manmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000000
+#  define BUFFER_SIZE 32
 # endif
 
 # include <unistd.h>
