@@ -6,11 +6,11 @@
 /*   By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 20:59:29 by manmarti          #+#    #+#             */
-/*   Updated: 2021/04/02 10:33:23 by manmarti         ###   ########.fr       */
+/*   Updated: 2021/05/20 09:50:45 by manmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <stdlib.h>
 
 size_t	ft_strlen(char *str)

@@ -6,11 +6,11 @@
 /*   By: manmarti <manmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 21:10:20 by manmarti          #+#    #+#             */
-/*   Updated: 2021/04/02 10:33:27 by manmarti         ###   ########.fr       */
+/*   Updated: 2021/05/20 09:50:34 by manmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <stdlib.h>
 #include <stdio.h>
 
